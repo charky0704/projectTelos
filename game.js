@@ -27,10 +27,14 @@ document.addEventListener("keydown", (event) => {
     keys[event.key] = true;
 
     // Spaceでジャンプ
-    if (event.key === " " && player.onGround) {
+   if (event.code === "Space" && player.onGround) {
         player.velocityY = player.jumpPower;
         player.onGround = false;
     }
+    if ((event.code === "Space" || event.key === "w") && player.onGround) {
+    player.velocityY = player.jumpPower;
+    player.onGround = false;
+}
 });
 
 document.addEventListener("keyup", (event) => {
